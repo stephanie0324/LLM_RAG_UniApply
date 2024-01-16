@@ -1,0 +1,95 @@
+
+h1 { text-align: center; 
+    color: #7c795d; font-family: 'Trocchi',
+     serif; font-size: 45px; 
+     font-weight: normal; 
+     line-height: 48px; 
+     margin: 0; }
+
+#chatbot{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-height: 500px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(189, 189, 189);
+    padding: 10px;
+    overflow-y: auto; /* Scrollbar appears only when needed */
+
+    /* Optional: Custom scrollbar styles for Webkit browsers */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: darkgray;
+        border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: gray;
+    }
+    
+}
+
+.botText { 
+    font-family: monospace;
+    font-size: 14px; 
+    text-align: left; 
+    line-height: 25px; 
+    color: rgb(109, 111, 109); 
+    position: relative; 
+    padding: 10px; 
+    background-color: #f0f0f0; 
+    border-radius: 10px; 
+    max-width: fit-content;
+} 
+
+.botText::after { 
+    content: ''; 
+    position: absolute; 
+    top: 50%; 
+    right: 100%; 
+    margin-top: -10px; 
+    border-width: 10px; 
+    border-style: solid; 
+    border-color: transparent #f0f0f0 transparent transparent;
+}
+
+
+
+#userInput{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 70%;
+    text-align: center;
+}
+
+#textInput{
+    border: 3px solid white;
+    border-bottom: 2px solid #afafaf;
+    font-family: monospace;
+    font-size: 14px;
+    width: 60%;
+    padding: 16px;
+    color: darkslategray
+}
+
+#buttonInput{
+   padding: 5px;
+   font-family: monospace;
+   font-size: 14px;
+   border: 3px solid #5b605c;
+   background-color: rgb(40,48,40);
+   color: white;
+   border-radius: 10px;
+}
+
+.userText{
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: right;
+    color: rgb(109,111,109)
+
+}

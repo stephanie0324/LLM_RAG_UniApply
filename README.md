@@ -34,3 +34,37 @@
   </h5>
   </p>
 </div>
+
+# About the project
+<div align="center">
+    <img  src = "./app_interface.png" width = 500/>
+</div>
+
+This is an implementation of the Retrieval-Augmented Generation (RAG) model, with application F&Q collected from universities around the world. Providing accurate information and link for your reference, also allows user to ask free form questions.
+<p align="center">
+<img src="./gpt_result.png" alt="drawing" width="200" height="140"/><img src="./gpt_rag_result.png" alt="drawing" width="300"/>
+<br> Comparison on GPT-3.5 and GPT3.5 with RAG </br>
+</p>
+
+# Usage
+### Things to install
+```bash
+!pip install openai
+!pip install tiktoken
+!pip install langchain
+!pip install faiss-cpu
+!pip install text_generation
+!pip install django
+```
+### ENV VAR setting
+```bash
+export "OPENAI_API_KEY" = 'YOUR_OPENAI_KEY'
+export "DJANGO_SECRET_KEY" = 'YOUR_DJANGO_SECRET_KEY'
+```
+### Run
+```
+cd UniApply_Chatbot
+python manage.py runserver 8003 -- you can change port 
+```
+
+
