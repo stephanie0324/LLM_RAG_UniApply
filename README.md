@@ -15,7 +15,7 @@
     </a>
 </p>
 <div align="center">
-    <img src="./UniApplyLogo.png" width=250, height=150>
+    <img src="./img/UniApplyLogo.png" width=250, height=150>
     <p>
     This is a Uni/Colledge Application F&Q Chatbot through RAG implementation.
     <br>  
@@ -37,12 +37,12 @@
 
 # About the project
 <div align="center">
-    <img  src = "./app_interface.png" width = 500/>
+    <img  src = "./img/app_interface.png" width = 500/>
 </div>
 
-This is an implementation of the Retrieval-Augmented Generation (RAG) model, with application F&Q collected from universities around the world. Providing accurate information and link for your reference, also allows user to ask free form questions.
+This is an implementation of the Retrieval-Augmented Generation (RAG) model by [Langchain](https://www.langchain.com/), with application F&Q collected from universities around the world. Providing accurate information and link for your reference, also allows user to ask free form questions.
 <p align="center">
-<img src="./gpt_result.png" alt="drawing" width="200" height="140"/><img src="./gpt_rag_result.png" alt="drawing" width="300"/>
+<img src="./img/gpt_result.png" alt="drawing" width="200" height="140"/><img src="./img/gpt_rag_result.png" alt="drawing" width="300"/>
 <br> Comparison on GPT-3.5 and GPT3.5 with RAG </br>
 </p>
 
