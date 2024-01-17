@@ -1,24 +1,6 @@
 
 <a name="readme-top"></a>
 
-<style>
-  .image-cropper {
-    width: 500px;      /* 容器宽度 */
-    height:215px;     /* 容器高度 */
-    overflow: hidden;  /* 隐藏溢出部分 */
-    position: relative;
-  }
-
-  .image-cropper img {
-    width: 100%;       /* 图片宽度填满容器 */
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    left: 0;
-  }
-</style>
-
-
 
 <h1 align="center"> UniApply </h1>
 
@@ -69,7 +51,7 @@ This is an implementation of the Retrieval-Augmented Generation (RAG) model by [
 
 <div align="center">
 <p class="image-cropper">
-    <img  src = "./img/UniApply.gif" />
+    <img  src = "./img/UniApply_demo.gif" />
 </p> UniApply Interface 
 </div>
 <br>
