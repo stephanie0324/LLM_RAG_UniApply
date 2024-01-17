@@ -1,4 +1,7 @@
+
 <!-- crop the gif -->
+<a name="readme-top"></a>
+
 <style>
   .image-cropper {
     width: 500px;      /* 容器宽度 */
@@ -41,7 +44,7 @@
 
 
 <div align="center">
-    <img src="./img/UniApplyLogo.png" width=80, height=80>
+    <img src="./img/UniApplyLogo.png" width=160, height=150>
     <p>
     This is a Uni/Colledge Application F&Q Chatbot through RAG implementation.
     <br>  
