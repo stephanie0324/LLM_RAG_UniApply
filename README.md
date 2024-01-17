@@ -1,5 +1,4 @@
 
-<!-- crop the gif -->
 <a name="readme-top"></a>
 
 <style>
