@@ -1,4 +1,4 @@
-<h1 align="center">UniApply </h1>
+<h1 align="center"> UniApply </h1>
 
 <p align="center">
     <a href="https://github.com/FlagOpen/FlagEmbedding">
@@ -15,13 +15,13 @@
     </a>
 </p>
 <div align="center">
-    <img src="./img/UniApplyLogo.png" width=250, height=150>
+    <img src="./img/UniApplyLogo.png" width=100, height=90>
     <p>
     This is a Uni/Colledge Application F&Q Chatbot through RAG implementation.
     <br>  
     Ask freely and get the most accurate information with link.
     <br>
-    <h5 align="center">
+    <h3 align="center">
     <p>
         <a href=#about-the-project>About</a> |
         <a href=#new-updates>News</a> |
