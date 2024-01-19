@@ -72,6 +72,7 @@ The results showed that with the RAG implemented with our model, it can providin
 # New Updates
 >　🎉　UniApply is born on Jan 16, 2024
 
+* 2024-01-19: Multi-lingual is available, news update section is on the web 
 * 2024-01-17: The first version of UniApply is available
 
 
@@ -135,12 +136,12 @@ The overall structure of this project, you can modify it as you like, also any r
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Roadmap
-- [ ] Bilingual or multi-lingual support
+- [x] Bilingual or multi-lingual support
 - [ ] Better Interface
     - [ ] press enter to send message
     - [ ] expandible text entering box
 - [ ] Able to change embedding and generating models, including Llama, TWLlama or ChatGLM...
-- [ ] More schools and departments to be added 
+- [x] More schools and departments to be added 
 - [ ] Personalized upcomming deadline alerts and organized planning table to be created 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
