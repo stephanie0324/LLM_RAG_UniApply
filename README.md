@@ -137,12 +137,12 @@ The overall structure of this project, you can modify it as you like, also any r
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Roadmap
-- [x] Bilingual or multi-lingual support
+- :heavy_check_mark: Bilingual or multi-lingual support
 - [ ] Better Interface
     - [ ] press enter to send message
     - [ ] expandible text entering box
 - [ ] Able to change embedding and generating models, including Llama, TWLlama or ChatGLM...
-- [x] More schools and departments to be added 
+- :heavy_check_mark: More schools and departments to be added 
 - [ ] Personalized upcomming deadline alerts and organized planning table to be created 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
