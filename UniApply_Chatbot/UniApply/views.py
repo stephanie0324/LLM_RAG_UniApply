@@ -26,7 +26,7 @@ from langchain.schema import format_document
 from langchain import HuggingFaceTextGenInference
 
 # For Message schemas, 
-from langchain.schema import HumanMessage, AIMessage, ChatMessage, FunctionMessage
+from langchain.schema import HumanMessage, AIMessage, ChatMessage, FunctionMessage, SystemMessage
 
 def createDoc(file_path:str)->list():
     
@@ -43,7 +43,7 @@ def createDoc(file_path:str)->list():
     for idx , row in df.iterrows():
         ## TODO: clean the text upon on your collected data
         doc_json = {
-            "Q": row["Question"].replace('\xa0','').replace('\n',''), #text cleaning
+            "Q": ','.join(str(row['Tags']).split(',')[:1]) +row["Question"].replace('\xa0','').replace('\n',''), #text cleaning
             "A": row["Answer"].replace('\xa0','').replace('\n','')
         }
         doc_content = json.dumps(doc_json, ensure_ascii=False)
@@ -71,20 +71,17 @@ def _combine_documents(
 def index(request):
     return render(request, 'UniApply/index.html')
 
-def specific(request):
-    return HttpResponse("This is the specific url ")
-
 def getResponse(request):
 
     ## TODO : Change model if you like
-    docs = createDoc(file_path='./data')
     model_name = 'gpt-3.5-turbo-1106' # you can change your model here
     
+    # Create FAISS　Index
+    docs = createDoc(file_path='./data')
     vectorstore = FAISS.from_documents(
         docs, embedding=OpenAIEmbeddings()
     )
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 1}) # you can retrieve as many ans as you want
-    
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 10}) # k = how many candidates the retriever returns
     ## TODO: You can change your own template
     # template setting
     template = """<|system|>
@@ -104,6 +101,7 @@ def getResponse(request):
     prompt = ChatPromptTemplate.from_template(template)
 
     model  = ChatOpenAI(model=model_name,temperature=0)
+    translater = ChatOpenAI(model=model_name,temperature=0)
 
     chain = (
         {"context": retriever | _combine_documents, "question": RunnablePassthrough()}
@@ -113,6 +111,17 @@ def getResponse(request):
     )
 
     userMessage = request.GET.get('userMessage')
+
+    # translate
+    messages = [
+        SystemMessage(
+            content="You are a helpful assistant that translates any language to English"
+        ),
+        HumanMessage(
+            content=userMessage
+        ),
+    ]
+    userMessage  = translater(messages).content
 
     response_ai_message = chain.invoke(userMessage)
     return HttpResponse(response_ai_message)
