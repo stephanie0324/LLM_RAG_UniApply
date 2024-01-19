@@ -73,6 +73,7 @@ The results showed that with the RAG implemented with our model, it can providin
 >　🎉　UniApply is born on Jan 16, 2024
 
 * 2024-01-19: Multi-lingual is available, news update section is on the web 
+* 2024-01-18: Schools are added in the list now ~~~~~~~~~~~~~~~~
 * 2024-01-17: The first version of UniApply is available
 
 

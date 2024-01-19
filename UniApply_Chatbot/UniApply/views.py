@@ -43,7 +43,7 @@ def createDoc(file_path:str)->list():
     for idx , row in df.iterrows():
         ## TODO: clean the text upon on your collected data
         doc_json = {
-            "Q": ','.join(str(row['Tags']).split(',')[:1]) +row["Question"].replace('\xa0','').replace('\n',''), #text cleaning
+            "Q": ','.join(str(row['Tags']).split(',')[:2])+ ' '+str(row["Question"]).replace('\xa0','').replace('\n','') , #text cleaning
             "A": row["Answer"].replace('\xa0','').replace('\n','')
         }
         doc_content = json.dumps(doc_json, ensure_ascii=False)
@@ -81,14 +81,14 @@ def getResponse(request):
     vectorstore = FAISS.from_documents(
         docs, embedding=OpenAIEmbeddings()
     )
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 10}) # k = how many candidates the retriever returns
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 5}) # k = how many candidates the retriever returns
     ## TODO: You can change your own template
     # template setting
     template = """<|system|>
     Answer User Questions according to the Context Dataset.
 
     Below are the follwing rules:
-    1. Compare all JSON fields named 'Q' in the Context to find the one that is similar to 'User Question' in terms of keywords and contextual semantics.
+    1. Compare all JSON fields named 'Q' in the Context to find the one that is relevant to 'User Question' upon keyowrds or context semantically.
     2. If no similar JSON is found, reply with 'No relevant information found'.
     3. You must directly quote the complete text from the 'A' field of the similar JSON as your answer (you must preserve the original text's line breaks (\r\n) and any formatting), and make no modifications.\
     4. You must return the link
