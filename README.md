@@ -47,6 +47,8 @@
 </div>
 
 # About the project
+> For older version implemented with Django, you can refer to this page [page_link]()
+
 This is an implementation of the Retrieval-Augmented Generation (RAG) model by [Langchain](https://www.langchain.com/), and a chatbot interface built with [Django](https://www.djangoproject.com/) using application F&Q collected from universities around the world. 
 
 <div align="center">
@@ -72,6 +74,7 @@ The results showed that with the RAG implemented with our model, it can providin
 # New Updates
 >　🎉　UniApply is born on Jan 16, 2024
 
+* 2025-03-09: Use streamlit + langchain to run the whole project
 * 2024-01-19: Multi-lingual is available, news update section is on the web 
 * 2024-01-18: Schools are added in the list now ~~~~~~~~~~~~~~~~
 * 2024-01-17: The first version of UniApply is available
@@ -80,85 +83,6 @@ The results showed that with the RAG implemented with our model, it can providin
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Getting Started
-## Installation
-```bash
-!pip install openai
-!pip install tiktoken
-!pip install langchain
-!pip install faiss-cpu
-!pip install text_generation
-!pip install django
-```
-## ENV VAR setting
-```bash
-export "OPENAI_API_KEY" = 'YOUR_OPENAI_KEY'
-export "DJANGO_SECRET_KEY" = 'YOUR_DJANGO_SECRET_KEY'
-```
-## Run
-```
-cd UniApply_Chatbot
-python manage.py runserver 8003 -- you can change port 
-```
-## Add your own data
-You can put your own data in the data folder under `./UniApply_Chatbot/data/`, the file should be in excel (`.xlsx` ) format.
-
-Also the columns are Question, Answer, Tags, Link respectively.
-* **Question**: The questions from the F&Q
-* **Answer**: The corresponding answer from the F&Q
-* **Tags**: Stores the school, department, degree and category information, for example: USC , Vertibi, Master, PhD, Application
-* **Link** : link of the F&Q website
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# Usage
-The overall structure of this project, you can modify it as you like, also any recommendation is welcomed.
-### Important files
-* `./UniApply_Chatbot/data/` : the folder where we store the f&q data to be put in the vector space
-* `manage.py`: the file that runs everything `main` is in here
-* `view.py`: modify responce and custom prompt templates
-* `static`, `template`: modify the appearance of the chatbot under here
-```bash
-└──LLM_RAG_UniApply
-   ├──UniApply_Chatbot # the whole django project
-   │  ├──data 
-   │  ├──UniApply_Chatbot
-   │  ├──manage.py 
-   │  ├──db.sqlite3
-   │  └──UniApply # the chatbot
-   │     ├──static 
-   │     ├──admin.py
-   │     ├──templates 
-   │     ...
-   │     └──views.py 
-   ├──LICENSE
-   ├──README.md
-   └──img
-```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# Roadmap
-- :heavy_check_mark: Bilingual or multi-lingual support
-- [ ] Better Interface
-    - [ ] press enter to send message
-    - [ ] expandible text entering box
-- [ ] Able to change embedding and generating models, including Llama, TWLlama or ChatGLM...
-- :heavy_check_mark: More schools and departments to be added 
-- [ ] Personalized upcomming deadline alerts and organized planning table to be created 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-# Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star 🌟🌟🌟 Thxxx 🌟🌟🌟
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
