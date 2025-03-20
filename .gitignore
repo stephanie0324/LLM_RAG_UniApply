@@ -1,0 +1,14 @@
+components/Streamlit_ver/app/__pycache__/config.cpython-39.pyc
+components/Streamlit_ver/app/__pycache__/itri_api.cpython-39.pyc
+components/Streamlit_ver/app/__pycache__/logger.cpython-39.pyc
+components/Streamlit_ver/app/__pycache__/my_faiss.cpython-39.pyc
+components/Streamlit_ver/app/__pycache__/twc_rag.cpython-39.pyc
+components/Streamlit_ver/app/index_data/.gitignore
+components/Streamlit_ver/app/index_data/uniApply_rag/index.faiss
+components/Streamlit_ver/app/index_data/uniApply_rag/index.pkl
+components/Django_ver/UniApply/__pycache__/__init__.cpython-310.pyc
+components/Django_ver/UniApply/__pycache__/admin.cpython-310.pyc
+components/Django_ver/UniApply/__pycache__/apps.cpython-310.pyc
+components/Django_ver/UniApply/__pycache__/models.cpython-310.pyc
+components/Django_ver/UniApply/__pycache__/urls.cpython-310.pyc
+components/Django_ver/UniApply/__pycache__/views.cpython-310.pyc

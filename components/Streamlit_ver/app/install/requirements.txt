@@ -1,0 +1,24 @@
+faiss-cpu==1.8.0
+langchain==0.1.16
+langchain-community==0.0.32
+langchain-core==0.1.42
+langchain-openai==0.0.5
+langchain-text-splitters==0.0.1
+langgraph==0.0.37
+langserve[all]==0.0.46
+text_generation==0.7.0
+transformers==4.41.2
+openai==1.11.1
+sentence-transformers==3.0.1
+streamlit==1.31.0
+streamlit-pills==0.3.0
+streamlit-image-select==0.6.0
+streamlit-option-menu==0.3.12
+streamlit-aggrid==1.0.2
+streamlit-code-editor==0.1.14
+pandas>=1.5.3,<3.0.0
+pydantic-settings==2.0.3
+pydantic==2.4.2
+# when requesting langchain model, httpx need to be below 0.28.0 to work
+httpx==0.27.2
+openpyxl==3.1.5

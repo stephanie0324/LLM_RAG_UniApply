@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  app:
+    image: stephC/llm-rag-uniapply:1.0.0-src
+    env_file:
+      - .env
+    volumes:
+      - /etc/ssl/certs:/etc/ssl/certs:ro
+      - "${HOST_HF_HOME}:/hf"
+    ports:
+      - "${HOST_PORT}:7860"
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
