@@ -48,7 +48,6 @@ To deploy the application simply go to `deploy` folder.
 1. Modify `.env` file
     * OPENAI_API_KEY
     * HOST_PORT
-    * GPU_DEVICE
     
     (Retrieval Related Settings) 
     > [!NOTE] you can change below settings regarding to the documents and language you have prepared

@@ -94,13 +94,16 @@ To deploy the application simply go to `deploy` folder.
 1. Modify `.env` file
     * OPENAI_API_KEY
     * HOST_PORT
-    * GPU_DEVICE
     
     (Retrieval Related Settings) 
     > [!NOTE] you can change below settings regarding to the documents and language you have prepared
     * EMBEDDING_MODEL_NAME
-    * RETRIEVER_RETURN_TOP_N
-2. Start the application
+    * RETRIEVER_RETURN_TOP_N\
+2. Build image
+```
+bash components/Streamlit_ver/script/build-docker-image.sh
+```
+3. Start the application
 ```
 docker-compose up -d
 ```
