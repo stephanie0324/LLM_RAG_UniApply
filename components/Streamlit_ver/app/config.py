@@ -1,10 +1,7 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import AnyHttpUrl, validator, Json, model_validator
+from pydantic_settings import BaseSettings
+from pydantic import AnyHttpUrl, validator
 from typing import List, Union, Optional, Pattern, ClassVar, Dict
 from model.model_config import ModelConfig, ModelEntry
-
-import json
-import os
 
 
 class Settings(BaseSettings):
@@ -72,7 +69,7 @@ class Settings(BaseSettings):
     GPU_DEVICE: str = "cuda:0"
     EMBEDDING_MODEL_NAME: str = "ibm-granite/granite-embedding-125m-english"
     RAG_INDEX_HF_EMBEDDING_MODEL_CONFIG: dict = {
-        "model_name": "BAAI/bge-m3",
+        "model_name": "ibm-granite/granite-embedding-125m-english",
         "model_kwargs": {"device": "cuda:0"},
         "encode_kwargs": {"normalize_embeddings": True},
     }

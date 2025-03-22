@@ -1,4 +1,9 @@
 # About the project
+### Table of Contents  
+[TOC]  
+
+---
+
 This is an implementation of the Retrieval-Augmented Generation (RAG) model by [Langchain](https://www.langchain.com/), and a chatbot interface built with [Django](https://www.djangoproject.com/) using application F&Q collected from universities around the world. 
 
 <div align="center">
@@ -8,18 +13,13 @@ This is an implementation of the Retrieval-Augmented Generation (RAG) model by [
 </div>
 <br>
 
-Regarding the RAG, we prepare the data in advance instead of implementing real-time retrieval. Since most application information do not vary much throughout the year, we only have to update the information yearly, therefore there is no need to do realtime search to lower the computation and development cost.   
-The vector-databse we use in this project is created using [FAISS](https://faiss.ai/index.html), it is a library for efficient similarity search and clustering of dense vectors. The embedding and generation model we use is offered by OpenAI GPT-3.5 for comparison.
-<p align="center">
-<img src="./img/model_structure_explain.gif" alt="drawing" width="400" height="200"/>
-<br> The Implementation of Partial RAG </br>
-</p>
-
 The results showed that with the RAG implemented with our model, it can providing accurate information and link for your reference. This mechanism also allows user to ask free form questions, instead of looking through the F&Q going through the questions one by one or `ctrl-F` and try to figure out which is the correct answer, non-native speakers and also confused user can easily get the right answer. 
 <p align="center">
 <img src="./img/gpt_result.png" alt="drawing" width="420" height="240"/><img src="./img/gpt_rag_result.png" alt="drawing" width="400" height="240"/>
 <br> Comparison on GPT-3.5 and GPT3.5 with RAG </br>
 </p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Get Started
 ## Installation
@@ -59,9 +59,13 @@ The overall structure of this project, you can modify it as you like, also any r
 * `manage.py`: the file that runs everything `main` is in here
 * `view.py`: modify responce and custom prompt templates
 * `static`, `template`: modify the appearance of the chatbot under here
+
+
+# Project Structure
 ```bash
-└──LLM_RAG_UniApply
-   ├──UniApply_Chatbot # the whole django project
+└──components
+   ├──Django_ver # the whole django project
+   │  ├──Readme.md
    │  ├──data 
    │  ├──UniApply_Chatbot
    │  ├──manage.py 
@@ -72,7 +76,8 @@ The overall structure of this project, you can modify it as you like, also any r
    │     ├──templates 
    │     ...
    │     └──views.py 
-   ├──LICENSE
+   ├──Streamlit_ver
    ├──README.md
    └──img
 ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

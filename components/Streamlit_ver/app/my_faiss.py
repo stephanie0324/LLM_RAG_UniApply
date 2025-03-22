@@ -55,7 +55,11 @@ def createDoc(file_path: str) -> (List[Document], Dict):
                 all_documents.append(
                     Document(
                         page_content=doc_content,
-                        metadata={"source": tags, "link": row.get("Link", "")},
+                        metadata={
+                            "school": school,
+                            "department": department,
+                            "link": row.get("Link", ""),
+                        },
                     )
                 )
 

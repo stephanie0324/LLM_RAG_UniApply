@@ -1,36 +1,92 @@
-# RAG DEMO
-這是一個支援 streamlit RAG demo 的 LLM API。
+# About the project
+### Table of Contents  
+[TOC]  
 
-## 目錄
-[TOC]
+---
+This is an implementation of the Retrieval-Augmented Generation (RAG) model by [Langchain](https://www.langchain.com/), and a chatbot interface built with [Streamlit](https://streamlit.io/) using application F&Q collected from universities around the world. 
 
-## 主要檔案與資料夾說明
-- `.env`: 相關環境設定
-- `data/`: 給程式讀取資料來源的資料夾
-- `index_data/`: 用來建立保存 FAISS 的 index 檔案目錄
-- `app/twc_rag.py`: 台水RAG使用langchain route 實作
-- `app/twc_web.py`: 台水RAG Demo 之頁面與執行的檔案
-- `app/web.py`: 凱基POC執行的檔案
+<div align="center">
+<p class="image-cropper">
+    <img  src = "./img/Streamlit_UniApply_demo.gif" />
+</p> UniApply Interface 
+</div>
+<br>
 
-## 執行流程
-### 編輯設定檔案
-1. 先編輯 `.env` 相關參數
-    * 最低需修改 `HOST_PORT`、`OPENAI_API_KEY` (若不帶 `OPENAI_API_KEY` 則需要移除掉 OPENAI 相關的模型)
-    * 調整 KM 系統連接參數 `ITRI_KM_CONFIG`
-    * 其他參數視情況而定
-### docker-compose
-- 執行 `docker-compose up -d`
-    - `docker` (建議至少24) 或 `docker-compose` (建議至少v2.2.3) 都可能遇到 `* Status: the --mount option requires BuildKit. ***` ，建議**升級版本**或修改 `/etc/docker/daemon.json` 設定檔
-    - The embedding model would take some time to load, eveytime you start the container
-- 關閉時： `docker-compose down`
-### Dockerfile
-- CMD 需要更改你要執行的執行檔名稱
-## Notes
-1. Streamlit 是即時偵測檔案異動
 
-### Dev. Mode
-1. Enter the container
-`bash ../components/Streamlit_ver/script/run-dev-mode.sh `
-2. run app
-`streamlit run --server.port 7860 twc_web.py `
+The results showed that with the RAG implemented with our model, it can providing accurate information and link for your reference. This mechanism also allows user to ask free form questions, instead of looking through the F&Q going through the questions one by one or `ctrl-F` and try to figure out which is the correct answer, non-native speakers and also confused user can easily get the right answer. 
+<p align="center">
+<img src="./img/gpt_result.png" alt="drawing" width="420" height="240"/><img src="./img/gpt_rag_result_2.png" alt="drawing" width="400" height="240"/>
+<br> Comparison on GPT-3.5 and GPT3.5 with RAG </br>
+</p>
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+# Add your own data
+You can put your own data in the data folder under `./app/data`, the file should be in excel (`.xlsx` ) format.
+
+Also the columns are Question, Answer, Tags, Link respectively.
+* **Question**: The questions from the F&Q
+* **Answer**: The corresponding answer from the F&Q
+* **Tags**: Stores the school, department, degree and category information, for example: USC , Vertibi, Master, PhD, Application
+* **Link** : link of the F&Q website
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Get Started
+The overall structure of this project, you can modify it as you like, also any recommendation is welcomed.
+
+## Main Files and Folder Descriptions  
+- `app/data/`: Folder containing source data for the program  
+- `app/index_data/`: Directory for storing FAISS index files
+* `app/my_faiss.py`: Implementation of Data procssing and building FAISS index  
+- `app/rag.py`: Implementation of RAG using LangChain routing  
+- `app/web.py`: The main execution file and webpage for the RAG Demo  
+- `app/prompt.py`: where you keep the prompts  
+## For Development
+To deploy the application simply go to `deploy` folder.  
+1. Modify `.env` file
+    * OPENAI_API_KEY
+    * HOST_PORT
+    * GPU_DEVICE
+    
+    (Retrieval Related Settings) 
+    > [!NOTE] you can change below settings regarding to the documents and language you have prepared
+    * EMBEDDING_MODEL_NAME
+    * RETRIEVER_RETURN_TOP_N
+
+2. Enter the container
+```
+bash script/run-dev-mode.sh 
+``` 
+
+3. Run the application
+```
+streamlit run --server.port 7860 web.py
+```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+# Project Structure
+```bash
+└──components
+   ├──Django_ver  
+   ├──Streamlit_ver # the whole streamlit project
+   │  ├──app 
+   │     ├──data 
+   │     ...
+   │     ├──web.py # the main web 
+   │     ├──rag.py.sh # the main chain
+   │     └──my_faiss.py # data preprocessing and index building
+   │  ├──img
+   │  └──script 
+   │     ├──build-docker-image.sh 
+   │     ├──get-image-name.sh
+   │     └──run-dev-mode.sh
+   │  ├──Dockerfile
+   │  └──Readme.md
+   ├──LICENSE
+   ├──README.md
+   └──img
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

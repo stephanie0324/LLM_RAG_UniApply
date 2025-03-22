@@ -26,4 +26,4 @@ EXPOSE 7860
 
 # Run the application with streamlit
 ENTRYPOINT ["streamlit"]
-CMD ["run", "twc_web.py", "--server.port", "7860"]
+CMD ["run", "web.py", "--server.port", "7860"]

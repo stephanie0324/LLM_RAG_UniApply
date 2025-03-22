@@ -7,7 +7,6 @@ services:
       - .env
     volumes:
       - /etc/ssl/certs:/etc/ssl/certs:ro
-      - "${HOST_HF_HOME}:/hf"
     ports:
       - "${HOST_PORT}:7860"
     restart: always

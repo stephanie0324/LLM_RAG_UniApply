@@ -20,7 +20,10 @@ docker run \
     --entrypoint bash \
     -e REQUESTS_CA_BUNDLE=${REQUESTS_CA_BUNDLE} \
     -e SSL_CERT_FILE=${SSL_CERT_FILE} \
+    -e DEMO_WEB_PAGE_TITLE="${DEMO_WEB_PAGE_TITLE}" \
+    -e DEMO_WEB_TITLE="${DEMO_WEB_TITLE}" \
     -e OPENAI_API_KEY="${OPENAI_API_KEY}" \
+    -e GPU_DEVICE="${GPU_DEVICE}" \
     -v /etc/ssl/certs:/etc/ssl/certs \
     --gpus all \
     $IMAGE_NAME
