@@ -5,8 +5,6 @@ services:
     image: stephC/llm-rag-uniapply:1.0.0-src
     env_file:
       - .env
-    volumes:
-      - /etc/ssl/certs:/etc/ssl/certs:ro
     ports:
       - "${HOST_PORT}:7860"
     restart: always
