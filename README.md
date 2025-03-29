@@ -90,13 +90,16 @@ The results showed that with the RAG implemented with our model, it can providin
 
 # Getting Started
 
+> For data preparing and processing : [read here](README_DataProcess.md)
+
 To deploy the application simply go to `deploy` folder.  
 1. Modify `.env` file
     * OPENAI_API_KEY
     * HOST_PORT
     
     (Retrieval Related Settings) 
-    > [!NOTE] you can change below settings regarding to the documents and language you have prepared
+    > [!NOTE]
+    > you can change below settings regarding to the documents and language you have prepared
     * EMBEDDING_MODEL_NAME
     * RETRIEVER_RETURN_TOP_N\
 2. Build image
